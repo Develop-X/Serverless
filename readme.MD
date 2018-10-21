@@ -13,3 +13,7 @@ serverless deploy -v
 serverless plugin install --name serverless-offline
 
 serverless offline start
+
+### Serverless dashbird
+
+https://app.dashbird.io/
