@@ -11,3 +11,5 @@ serverless deploy -v
 ### Serverless offline
 
 serverless plugin install --name serverless-offline
+
+serverless offline start
