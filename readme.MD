@@ -7,3 +7,7 @@ serverless config credentials --provider aws --key xxxxxxxxxxxxxx --secret xxxxx
 serverless create --template aws-nodejs --path my-service
 
 serverless deploy -v
+
+### Serverless offline
+
+serverless plugin install --name serverless-offline
