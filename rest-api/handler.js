@@ -1,5 +1,6 @@
 const connectToDatabase = require("./db");
 const Note = require("./models/Note");
+require("dotenv").config({ path: "./variables.env" });
 
 ("use strict");
 

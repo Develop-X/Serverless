@@ -2,5 +2,8 @@
 node_modules
 jspm_packages
 
+# mongodb config
+variables.env
+
 # Serverless directories
 .serverless
