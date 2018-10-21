@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
+  "author": "Dipjyoti Metia",
   "license": "ISC",
   "devDependencies": {
     "serverless-offline": "^3.28.0"
