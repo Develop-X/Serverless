@@ -1,18 +1,33 @@
-npm install -g serverless
+# Serverless Framewrok
 
-create IAM user
+### WHere to start?
+https://serverless.com/framework/docs/providers/aws/guide/quick-start/  
+``
+npm install -g serverless   
+``  
+* Create IAM user
+https://serverless.com/framework/docs/providers/aws/guide/iam/
 
-serverless config credentials --provider aws --key xxxxxxxxxxxxxx --secret xxxxxxxxxxxxxx
+* Setup user access  
+serverless config credentials --provider aws --key xxxxxxxxxxxxxx --secret xxxxxxxxxxxxxx  
 
-serverless create --template aws-nodejs --path my-service
+* Create project  
+serverless create --template aws-nodejs --path my-service  
 
+* Serverless yml  
+https://serverless.com/framework/docs/providers/aws/guide/serverless.yml/  
+
+* Serverless Deploy  
+``  
 serverless deploy -v
-
+``  
 ### Serverless offline
+https://github.com/dherault/serverless-offline  
+```  
+serverless plugin install --name serverless-offline  
+serverless offline start  
+```  
 
-serverless plugin install --name serverless-offline
-
-serverless offline start
 
 ### Serverless dashbird
 
