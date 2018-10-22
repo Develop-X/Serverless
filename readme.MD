@@ -1,48 +1,58 @@
 # Serverless Framewrok
-![alt text](https://raw.githubusercontent.com/Develop-X/Serverless/master/ServerlessFramework.png)  
+
+![alt text](https://raw.githubusercontent.com/Develop-X/Serverless/master/ServerlessFramework.png)
 
 ### WHere to start?
-https://serverless.com/framework/docs/providers/aws/guide/quick-start/  
 
-``
-npm install -g serverless   
-``  
+https://serverless.com/framework/docs/providers/aws/guide/quick-start/
 
-![alt text](https://raw.githubusercontent.com/Develop-X/Serverless/master/serverless.png)  
+`npm install -g serverless`
 
-* Create IAM user
-https://serverless.com/framework/docs/providers/aws/guide/iam/
+![alt text](https://raw.githubusercontent.com/Develop-X/Serverless/master/serverless.png)
 
-* Setup user access  
-serverless config credentials --provider aws --key xxxxxxxxxxxxxx --secret xxxxxxxxxxxxxx  
+- Create IAM user
+  https://serverless.com/framework/docs/providers/aws/guide/iam/
 
-* Create project  
-serverless create --template aws-nodejs --path my-service  
+- Setup user access  
+  serverless config credentials --provider aws --key xxxxxxxxxxxxxx --secret xxxxxxxxxxxxxx
 
-* Serverless yml  
-https://serverless.com/framework/docs/providers/aws/guide/serverless.yml/  
+- Create project  
+  serverless create --template aws-nodejs --path my-service
 
-* Serverless Deploy  
-``  
-serverless deploy -v
-``  
+- Serverless yml  
+  https://serverless.com/framework/docs/providers/aws/guide/serverless.yml/
 
-![alt text](https://raw.githubusercontent.com/Develop-X/Serverless/master/serverlessdeploy.png)  
+- Serverless Deploy  
+  `serverless deploy -v`
+
+![alt text](https://raw.githubusercontent.com/Develop-X/Serverless/master/serverlessdeploy.png)
 
 ### Serverless offline
-https://github.com/dherault/serverless-offline  
-```  
-serverless plugin install --name serverless-offline  
-serverless offline start  
-```  
-![alt text](https://raw.githubusercontent.com/Develop-X/Serverless/master/serverlessOffline.png)  
+
+https://github.com/dherault/serverless-offline
+
+```
+serverless plugin install --name serverless-offline
+serverless offline start
+```
+
+![alt text](https://raw.githubusercontent.com/Develop-X/Serverless/master/serverlessOffline.png)
 
 ### Insomnia
-![alt text](https://raw.githubusercontent.com/Develop-X/Serverless/master/serverlessMongo.png)  
+
+![alt text](https://raw.githubusercontent.com/Develop-X/Serverless/master/serverlessMongo.png)
 
 ### Serverless dashbird
 
 https://app.dashbird.io/
 
 ### Mongodb
-![alt text](https://raw.githubusercontent.com/Develop-X/Serverless/master/mongodb.png)  
+
+![alt text](https://raw.githubusercontent.com/Develop-X/Serverless/master/mongodb.png)
+
+```
+$ npm init -y
+$ npm i --save-dev serverless-offline
+$ npm i --save mongoose dotenv
+sls offline start --skipCacheInvalidation
+```
