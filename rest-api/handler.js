@@ -1,8 +1,72 @@
 const connectToDatabase = require("./db");
 const Note = require("./models/Note");
+const Mobile = require("./models/Mobile");
 require("dotenv").config({ path: "./variables.env" });
 
 ("use strict");
+
+module.exports.createmobile = (event, context, callback) => {
+  context.callbackWaitsForEmptyEventLoop = false;
+
+  connectToDatabase().then(() => {
+    Mobile.create(JSON.parse(event.body))
+      .then(note =>
+        callback(null, {
+          statusCode: 200,
+          body: JSON.stringify(note)
+        })
+      )
+      .catch(err =>
+        callback(null, {
+          statusCode: err.statusCode || 500,
+          headers: { "Content-Type": "text/plain" },
+          body: "Could not create the mobile."
+        })
+      );
+  });
+};
+
+module.exports.getAllMobile = (event, context, callback) => {
+  context.callbackWaitsForEmptyEventLoop = false;
+
+  connectToDatabase().then(() => {
+    Mobile.find()
+      .then(mobiles =>
+        callback(null, {
+          statusCode: 200,
+          body: JSON.stringify(mobiles)
+        })
+      )
+      .catch(err =>
+        callback(null, {
+          statusCode: err.statusCode || 500,
+          headers: { "Content-Type": "text/plain" },
+          body: "Could not fetch the mobile."
+        })
+      );
+  });
+};
+
+module.exports.getOneMobile = (event, context, callback) => {
+  context.callbackWaitsForEmptyEventLoop = false;
+
+  connectToDatabase().then(() => {
+    Mobile.findById(event.pathParameters.id)
+      .then(note =>
+        callback(null, {
+          statusCode: 200,
+          body: JSON.stringify(note)
+        })
+      )
+      .catch(err =>
+        callback(null, {
+          statusCode: err.statusCode || 500,
+          headers: { "Content-Type": "text/plain" },
+          body: "Could not fetch the mobile."
+        })
+      );
+  });
+};
 
 module.exports.create = (event, context, callback) => {
   context.callbackWaitsForEmptyEventLoop = false;

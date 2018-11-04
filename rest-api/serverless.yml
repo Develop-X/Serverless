@@ -9,6 +9,27 @@ provider:
   region: ap-southeast-2
 
 functions: # add 4 functions for CRUD
+  createmobile:
+    handler: handler.createmobile # point to exported create function in handler.js
+    events:
+      - http:
+         path: mobile # path will be domain.name.com/dev/mobile
+         method: post
+         cors: true
+  getAllMobile:
+    handler: handler.getAllMobile # path will be domain.name.com/dev/mobiles
+    events:
+      - http:
+         path: mobiles
+         method: get
+         cors: true
+  getOneMobile:
+    handler: handler.getOneMobile
+    events:
+      - http:
+          path: mobiles/{id} # path will be domain.name.com/dev/notes/1
+          method: get
+          cors: true       
   create:
     handler: handler.create # point to exported create function in handler.js
     events:
