@@ -27,9 +27,16 @@ functions: # add 4 functions for CRUD
     handler: handler.getOneMobile
     events:
       - http:
-          path: mobiles/{id} # path will be domain.name.com/dev/notes/1
+          path: mobiles/{id} # path will be domain.name.com/dev/mobiles/1
           method: get
-          cors: true       
+          cors: true
+  updateMobile:
+    handler: handler.updateMobile
+    events:
+      - http:
+          path: mobiles/{id} # path will be domain.name.com/dev/mobiles/1
+          method: put
+          cors: true               
   create:
     handler: handler.create # point to exported create function in handler.js
     events:

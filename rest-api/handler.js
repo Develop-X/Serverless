@@ -10,10 +10,10 @@ module.exports.createmobile = (event, context, callback) => {
 
   connectToDatabase().then(() => {
     Mobile.create(JSON.parse(event.body))
-      .then(note =>
+      .then(mobile =>
         callback(null, {
           statusCode: 200,
-          body: JSON.stringify(note)
+          body: JSON.stringify(mobile)
         })
       )
       .catch(err =>
@@ -63,6 +63,31 @@ module.exports.getOneMobile = (event, context, callback) => {
           statusCode: err.statusCode || 500,
           headers: { "Content-Type": "text/plain" },
           body: "Could not fetch the mobile."
+        })
+      );
+  });
+};
+
+module.exports.updateMobile = (event, context, callback) => {
+  context.callbackWaitsForEmptyEventLoop = false;
+
+  connectToDatabase().then(() => {
+    Mobile.findByIdAndUpdate(event.pathParameters.id, JSON.parse(event.body), {
+        new: true
+      })
+      .then(mobile =>
+        callback(null, {
+          statusCode: 200,
+          body: JSON.stringify(mobile)
+        })
+      )
+      .catch(err =>
+        callback(null, {
+          statusCode: err.statusCode || 500,
+          headers: {
+            "Content-Type": "text/plain"
+          },
+          body: "Could not fetch the mobiles."
         })
       );
   });
