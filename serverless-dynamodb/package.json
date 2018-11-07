@@ -1,0 +1,15 @@
+{
+  "name": "serverless-dynamodb",
+  "version": "1.0.0",
+  "description": "",
+  "main": "handler.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Dipjyoti Metia",
+  "license": "ISC",
+  "dependencies": {
+    "uuid": "^2.0.3",
+    "aws-sdk": "2.350.0"
+  }
+}
